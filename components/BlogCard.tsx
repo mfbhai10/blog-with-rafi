@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface BlogCardProps {
   title: string;
   description: string;
@@ -5,6 +7,7 @@ interface BlogCardProps {
   date: string;
   readingTime: string;
   href?: string;
+  tags?: string[];
 }
 
 export default function BlogCard({
@@ -14,24 +17,41 @@ export default function BlogCard({
   date,
   readingTime,
   href = "#",
+  tags = [],
 }: BlogCardProps) {
+  const hasTags = tags.length > 0;
+
   return (
-    <a href={href}>
-      <div className="flex h-full flex-col rounded-lg border border-slate-200 bg-white p-6 hover:shadow-md transition-shadow cursor-pointer">
+    <Link href={href} className="group block h-full">
+      <article className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg">
         <div className="mb-3 flex items-center gap-2">
           <span className="inline-flex rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-700">
             {category}
           </span>
         </div>
-        <h3 className="mb-2 text-xl font-semibold text-slate-900 line-clamp-2">
+        <h3 className="mb-2 text-xl font-semibold tracking-tight text-slate-900 line-clamp-2 group-hover:text-blue-700">
           {title}
         </h3>
-        <p className="mb-4 flex-1 text-slate-600 line-clamp-3">{description}</p>
-        <div className="flex items-center justify-between text-sm text-slate-500">
+        <p className="mb-4 flex-1 text-sm leading-6 text-slate-600 line-clamp-3">
+          {description}
+        </p>
+        {hasTags ? (
+          <div className="mb-5 flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className="inline-flex rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-700"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        ) : null}
+        <div className="flex items-center justify-between gap-3 border-t border-slate-100 pt-4 text-sm text-slate-500">
           <span>{date}</span>
           <span>{readingTime}</span>
         </div>
-      </div>
-    </a>
+      </article>
+    </Link>
   );
 }
