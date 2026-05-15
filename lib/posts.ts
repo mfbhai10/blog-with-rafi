@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { readingTime } from "reading-time";
+import readingTime from "reading-time";
 
 // TypeScript interfaces
 export interface PostFrontmatter {
