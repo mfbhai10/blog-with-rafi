@@ -1,0 +1,443 @@
+---
+title: "ReactJS কী?"
+description: "Mr Abul-এর দোকানের গল্প দিয়ে ReactJS, Component, Props, State, Event আর JSX সহজভাবে বুঝি।"
+date: "2026-05-16"
+category: "React"
+tags: ["React", "JavaScript", "ফ্রন্টএন্ড", "শেখা"]
+---
+
+ধরো, একজন মানুষ আছে। তার নাম **Mr Abul**।
+
+Mr Abul একটা ছোট দোকান চালায়। দোকানের নাম **Abul Store**।
+
+তার দোকানে অনেক জিনিস আছে:
+
+- চকলেট
+- বিস্কুট
+- পানি
+- চিপস
+- খাতা
+- কলম
+
+প্রতিদিন অনেক customer আসে। কেউ চকলেট কেনে, কেউ পানি কেনে, কেউ খাতা কেনে।
+
+এখন Mr Abul চায় তার দোকানের জন্য একটা সুন্দর website বানাতে। যেখানে মানুষ দেখতে পারবে:
+
+- দোকানের নাম
+- প্রোডাক্ট লিস্ট
+- দাম
+- Cart
+- Order button
+
+এখন প্রশ্ন হলো: এই website বানাতে ReactJS কীভাবে সাহায্য করবে?
+
+চলো গল্প দিয়ে বুঝি।
+
+## 1. ReactJS কী?
+
+ReactJS হলো JavaScript-এর একটি library, যেটা দিয়ে আমরা সুন্দর, দ্রুত, আর reusable UI বানাতে পারি।
+
+সহজভাবে বললে:
+
+ReactJS হলো এমন একটা tool, যেটা দিয়ে আমরা website-এর ছোট ছোট অংশ বানিয়ে পুরো website তৈরি করি।
+
+যেমন Mr Abul-এর দোকানের website-এ থাকতে পারে:
+
+- Header
+- Product Card
+- Cart
+- Button
+- Footer
+
+React-এ এগুলোকে আমরা আলাদা আলাদা Component হিসেবে বানাতে পারি।
+
+## 2. Component কী?
+
+একদিন Mr Abul তার দোকানের website বানাতে বসলো।
+
+সে ভাবলো:
+
+“আমার website-এ তো অনেক product থাকবে। প্রতিটা product-এর জন্য একই ধরনের box লাগবে। নাম, ছবি, দাম, আর একটা Buy button।”
+
+যেমন:
+
+চকলেট
+দাম: ২০ টাকা
+[Buy Now]
+
+বিস্কুট
+দাম: ১৫ টাকা
+[Buy Now]
+
+পানি
+দাম: ২৫ টাকা
+[Buy Now]
+
+এখন যদি Mr Abul plain HTML দিয়ে বানায়, তাহলে তাকে বারবার একই structure লিখতে হবে।
+
+কিন্তু React-এ সে একটা `ProductCard` component বানাতে পারে।
+
+```jsx
+function ProductCard() {
+  return (
+    <div>
+      <h2>চকলেট</h2>
+      <p>দাম: ২০ টাকা</p>
+      <button>Buy Now</button>
+    </div>
+  );
+}
+```
+
+এটাই Component।
+
+সহজ ভাষায়:
+
+Component মানে website-এর ছোট reusable অংশ।
+
+যেমন বাস্তব জীবনে:
+
+একটা ইট দিয়ে দেয়াল হয় না।
+অনেক ইট মিলে দেয়াল হয়।
+
+React-এ:
+
+একটা Component দিয়ে পুরো website হয় না।
+অনেক Component মিলে website হয়।
+
+## 3. Props কী?
+
+এখন Mr Abul-এর `ProductCard` component আছে।
+
+কিন্তু সমস্যা হলো, সব product-এ যদি একই লেখা থাকে, তাহলে তো হবে না।
+
+চকলেটের নাম চকলেট হতে হবে।
+বিস্কুটের নাম বিস্কুট হতে হবে।
+পানির দাম ২৫ টাকা হতে হবে।
+
+এই জায়গায় আসে Props।
+
+Props হলো component-এর কাছে data পাঠানোর উপায়।
+
+```jsx
+function ProductCard(props) {
+  return (
+    <div>
+      <h2>{props.name}</h2>
+      <p>দাম: {props.price} টাকা</p>
+      <button>Buy Now</button>
+    </div>
+  );
+}
+```
+
+তারপর Mr Abul ব্যবহার করতে পারে:
+
+```jsx
+<ProductCard name="চকলেট" price="২০" />
+<ProductCard name="বিস্কুট" price="১৫" />
+<ProductCard name="পানি" price="২৫" />
+```
+
+এখন একই component দিয়ে অনেক product দেখানো যাচ্ছে।
+
+সহজ ভাষায়:
+
+Props হলো component-এর কাছে বাইরে থেকে data পাঠানোর system।
+
+বাস্তব উদাহরণ:
+
+Mr Abul তার দোকানের কর্মচারীকে বলে:
+
+এই product-এর নাম চকলেট, দাম ২০ টাকা।
+এই product-এর নাম পানি, দাম ২৫ টাকা।
+
+কর্মচারী একই নিয়মে product সাজায়, শুধু data বদলায়।
+
+React-এ component একই থাকে, props বদলায়।
+
+## 4. State কী?
+
+একদিন একজন customer Mr Abul-এর website-এ ঢুকলো।
+
+সে চকলেট কিনতে চায়। সে Add to Cart button চাপলো।
+
+এখন Cart-এর number 0 থেকে 1 হওয়া উচিত।
+
+এখানে আসে State।
+
+State হলো এমন data, যেটা সময়ের সাথে পরিবর্তন হতে পারে।
+
+যেমন:
+
+- Cart count: 0
+- Button click করার পর Cart count: 1
+- আরেকবার click করলে Cart count: 2
+
+React-এ state ব্যবহার করা হয় `useState` দিয়ে।
+
+```jsx
+import { useState } from "react";
+
+function CartButton() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Cart: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Add to Cart</button>
+    </div>
+  );
+}
+```
+
+সহজ ভাষায়:
+
+State হলো component-এর নিজের memory।
+
+Mr Abul-এর দোকানের উদাহরণে:
+
+- কতজন customer এসেছে
+- cart-এ কয়টা item আছে
+- কোন product selected
+- user login করেছে কি না
+
+এগুলো state হতে পারে।
+
+## 5. Event কী?
+
+Mr Abul-এর website-এ একটা button আছে:
+
+Add to Cart
+
+কাস্টমার button চাপলে কিছু একটা happen করবে।
+
+এই button চাপা, input লেখা, mouse move করা—এসব হলো Event।
+
+React-এ event handle করা যায় এভাবে:
+
+```jsx
+function ButtonExample() {
+  function handleClick() {
+    alert("Product added to cart!");
+  }
+
+  return <button onClick={handleClick}>Add to Cart</button>;
+}
+```
+
+সহজ ভাষায়:
+
+Event মানে user কিছু করলে website তার response দেবে।
+
+বাস্তব উদাহরণ:
+
+কাস্টমার Mr Abul-কে বলে:
+
+ভাই, একটা চকলেট দেন।
+
+তখন Mr Abul চকলেট দেয়।
+
+Website-এ user button click করলে React function চালায়।
+
+## 6. React কেন ব্যবহার করবো?
+
+Mr Abul প্রথমে ভাবলো:
+
+“আমি তো HTML, CSS, JavaScript দিয়েও website বানাতে পারি। তাহলে React লাগবে কেন?”
+
+ভালো প্রশ্ন।
+
+React দরকার যখন website বড় হতে শুরু করে।
+
+ধরো Mr Abul-এর website-এ আছে:
+
+- ১০০টা product
+- Cart system
+- Search
+- Category filter
+- Login system
+- Order history
+- Dashboard
+
+Plain JavaScript দিয়ে এগুলো manage করা কঠিন হয়ে যাবে।
+
+React সাহায্য করে:
+
+1. Code ছোট ছোট component-এ ভাগ করতে
+2. একই component বারবার ব্যবহার করতে
+3. Data change হলে UI automatically update করতে
+4. বড় project clean রাখতে
+5. Fast and interactive website বানাতে
+
+## 7. JSX কী?
+
+React-এ আমরা এমন code লিখি:
+
+```jsx
+function Welcome() {
+  return <h1>Welcome to Abul Store</h1>;
+}
+```
+
+এটা দেখতে HTML-এর মতো, কিন্তু আসলে এটা JavaScript-এর ভিতরে লেখা।
+
+এটাকে বলে JSX।
+
+সহজ ভাষায়:
+
+JSX হলো JavaScript-এর ভিতরে HTML-এর মতো code লেখার system।
+
+React JSX ব্যবহার করে কারণ এতে UI লেখা সহজ হয়।
+
+## 8. React App কীভাবে চিন্তা করবে?
+
+React project বানানোর সময় তুমি পুরো website-কে একসাথে ভাববে না।
+
+তুমি website-কে ছোট ছোট অংশে ভাগ করবে।
+
+Mr Abul-এর দোকানের website:
+
+```text
+App
+├── Navbar
+├── HeroSection
+├── ProductList
+│   ├── ProductCard
+│   ├── ProductCard
+│   └── ProductCard
+├── Cart
+└── Footer
+```
+
+এটাই React thinking।
+
+মানে:
+
+বড় problem-কে ছোট ছোট problem-এ ভাগ করা।
+
+এই skill একজন ভালো software engineer-এর জন্য খুব important।
+
+## 9. Simple React Example: Mr Abul-এর Product List
+
+```jsx
+function ProductCard({ name, price }) {
+  return (
+    <div>
+      <h2>{name}</h2>
+      <p>দাম: {price} টাকা</p>
+      <button>Add to Cart</button>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <div>
+      <h1>Abul Store</h1>
+      <ProductCard name="চকলেট" price="২০" />
+      <ProductCard name="বিস্কুট" price="১৫" />
+      <ProductCard name="পানি" price="২৫" />
+    </div>
+  );
+}
+
+export default App;
+```
+
+এখানে:
+
+- `ProductCard` হলো component
+- `name` এবং `price` হলো props
+- `App` হলো main component
+
+## 10. React শেখার সঠিক Roadmap
+
+একজন beginner হিসেবে React শেখার জন্য এই order follow করো:
+
+1. HTML ভালোভাবে শিখো
+2. CSS basic + flexbox + grid শিখো
+3. JavaScript basic শিখো
+4. DOM concept বুঝো
+5. React component শিখো
+6. Props শিখো
+7. State শিখো
+8. Event handling শিখো
+9. Conditional rendering শিখো
+10. List rendering শিখো
+11. `useEffect` শিখো
+12. React Router শিখো
+13. API থেকে data fetch করা শিখো
+14. ছোট project বানাও
+
+## 11. Beginner Mistake
+
+অনেক beginner React শেখার সময় একটা ভুল করে।
+
+তারা শুধু tutorial দেখে যায়, কিন্তু project বানায় না।
+
+তুমি এমন করবে না।
+
+প্রতিটা concept শেখার পর ছোট project বানাবে।
+
+যেমন:
+
+- Component শেখার পর: Profile Card বানাও
+- Props শেখার পর: Product Card বানাও
+- State শেখার পর: Counter App বানাও
+- Event শেখার পর: Add to Cart button বানাও
+- List শেখার পর: Todo List বানাও
+- API শেখার পর: Weather App বানাও
+
+## 12. Mr Abul-এর গল্প দিয়ে Final বুঝা
+
+Mr Abul-এর দোকানের website বানাতে গিয়ে আমরা শিখলাম:
+
+- ReactJS → UI বানানোর JavaScript library
+- Component → website-এর ছোট reusable অংশ
+- Props → component-এ data পাঠানোর উপায়
+- State → component-এর পরিবর্তনশীল memory
+- Event → user action handle করার system
+- JSX → JavaScript-এর ভিতরে HTML-এর মতো code
+
+React-এর main idea হলো:
+
+Website-কে ছোট ছোট reusable component-এ ভাগ করো, data দিয়ে control করো, আর user interaction অনুযায়ী UI update করো।
+
+## 13. Final Summary
+
+ReactJS হলো beginner-friendly কিন্তু powerful একটা tool।
+
+যদি তুমি HTML, CSS, JavaScript জানো, তাহলে React শেখা তোমার জন্য next step।
+
+React শেখার সময় মনে রাখবে:
+
+- Component বানাও
+- Props দিয়ে data পাঠাও
+- State দিয়ে পরিবর্তন handle করো
+- Event দিয়ে user action ধরো
+- ছোট project বানিয়ে practice করো
+
+Mr Abul যেমন তার দোকানকে সুন্দরভাবে সাজায়, React তেমন website-এর UI-কে সুন্দরভাবে সাজাতে সাহায্য করে।
+
+তুমি যদি নিয়মিত practice করো, তাহলে React দিয়ে নিজের portfolio, blog website, e-commerce site, dashboard, অনেক কিছু বানাতে পারবে।
+
+## তোমার জন্য ছোট Challenge
+
+Mr Abul-এর দোকানের জন্য একটা React component চিন্তা করো:
+
+**Component name:** `ProductCard`
+
+**Props:**
+
+- `name`
+- `price`
+- `category`
+- `inStock`
+
+এখন চিন্তা করো:
+
+1. `inStock` true হলে button দেখাবে: “কিনুন”
+2. `inStock` false হলে দেখাবে: “Stock নেই”
+
+এই logic-টা React-এ কীভাবে লিখবে?
