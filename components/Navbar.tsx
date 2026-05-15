@@ -16,23 +16,23 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white shadow-sm">
-      <div className="mx-auto max-w-4xl px-6 py-4">
-        <div className="flex items-center justify-between">
+      <div className="mx-auto max-w-5xl px-4 py-3 sm:px-6 sm:py-4">
+        <div className="flex items-center justify-between gap-4">
           {/* Brand */}
           <Link
             href="/"
-            className="text-xl font-bold text-slate-900 hover:text-blue-600 transition-colors"
+            className="text-lg font-bold tracking-tight text-slate-900 transition-colors hover:text-blue-600 sm:text-xl"
           >
             Blog with Rafi
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden items-center gap-8 md:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-slate-600 hover:text-slate-900 transition-colors text-sm font-medium"
+                className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
               >
                 {link.label}
               </Link>
@@ -41,7 +41,7 @@ export default function Navbar() {
               href="https://mfr-portfolio.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-600 hover:text-slate-900 transition-colors text-sm font-medium"
+              className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
             >
               Portfolio
             </a>
@@ -50,7 +50,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden flex flex-col gap-1.5 p-2"
+            className="flex flex-col gap-1.5 rounded-lg p-2 text-slate-900 transition-colors hover:bg-slate-100 md:hidden"
             aria-label="Toggle menu"
           >
             <span
@@ -73,12 +73,12 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden mt-4 flex flex-col gap-4 border-t border-slate-200 pt-4">
+          <div className="mt-3 flex flex-col gap-3 border-t border-slate-200 pt-4 md:hidden">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-slate-600 hover:text-slate-900 transition-colors text-sm font-medium"
+                className="rounded-lg px-2 py-1 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-50 hover:text-slate-900"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
@@ -88,7 +88,7 @@ export default function Navbar() {
               href="https://your-portfolio-link.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-600 hover:text-slate-900 transition-colors text-sm font-medium"
+              className="rounded-lg px-2 py-1 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-50 hover:text-slate-900"
             >
               Portfolio
             </a>

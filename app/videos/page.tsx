@@ -62,15 +62,15 @@ const videos: VideoItem[] = [
 export default function VideosPage() {
   return (
     <div className="w-full">
-      <section className="bg-linear-to-b from-slate-50 to-white px-6 py-20 sm:py-28">
-        <div className="mx-auto max-w-4xl">
+      <section className="bg-linear-to-b from-slate-50 to-white px-6 py-16 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-5xl">
           <p className="mb-4 text-sm font-medium uppercase tracking-widest text-blue-600">
             Video Learning
           </p>
-          <h1 className="text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl">
+          <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
             Video Learning
           </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-600">
+          <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:mt-8 sm:text-lg sm:leading-8">
             A collection of coding videos, tutorials, and learning resources I
             follow or create.
           </p>
@@ -78,7 +78,7 @@ export default function VideosPage() {
       </section>
 
       <section className="px-6 py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-5xl">
           <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {videos.map((video) => (
               <VideoCard

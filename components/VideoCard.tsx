@@ -25,18 +25,18 @@ export default function VideoCard({
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
           referrerPolicy="strict-origin-when-cross-origin"
-          className="h-full w-full"
+          className="block h-full w-full border-0"
         />
       </div>
 
-      <div className="flex flex-1 flex-col p-5">
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div className="mb-3 flex items-center gap-2">
-          <span className="inline-flex rounded-full bg-red-100 px-3 py-1 text-xs font-medium text-red-700">
+          <span className="inline-flex rounded-full bg-red-100 px-3 py-1 text-[11px] font-medium text-red-700 sm:text-xs">
             {category}
           </span>
         </div>
 
-        <h3 className="mb-2 text-lg font-semibold tracking-tight text-slate-900 line-clamp-2">
+        <h3 className="mb-2 text-base font-semibold tracking-tight text-slate-900 line-clamp-2 sm:text-lg">
           {title}
         </h3>
 

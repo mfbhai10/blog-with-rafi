@@ -48,32 +48,32 @@ export default function HomePage() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-slate-50 to-white px-6 py-20 sm:py-28">
-        <div className="mx-auto max-w-4xl">
+      <section className="bg-linear-to-b from-slate-50 to-white px-6 py-16 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-5xl">
           <p className="mb-4 text-sm font-medium uppercase tracking-widest text-blue-600">
             Welcome to my dev log
           </p>
 
-          <h1 className="text-5xl font-bold tracking-tight sm:text-6xl text-slate-900">
+          <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
             Hi, I&apos;m Rafi.
           </h1>
 
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-600">
+          <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:mt-8 sm:text-lg sm:leading-8">
             I write beginner-friendly notes about web development, AI lab
             projects, coding mistakes, and everything I learn while becoming a
             better developer.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-wrap gap-3 sm:mt-10 sm:gap-4">
             <Link
               href="/blog"
-              className="inline-flex items-center rounded-lg bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700 sm:px-6 sm:text-base"
             >
               Read Dev Logs
             </Link>
             <Link
               href="/about"
-              className="inline-flex items-center rounded-lg border border-slate-300 px-6 py-3 font-medium text-slate-900 hover:bg-slate-100 transition-colors"
+              className="inline-flex items-center rounded-lg border border-slate-300 px-5 py-3 text-sm font-medium text-slate-900 transition-colors hover:bg-slate-100 sm:px-6 sm:text-base"
             >
               Learn More About Me
             </Link>
@@ -82,14 +82,14 @@ export default function HomePage() {
       </section>
 
       {/* Latest Dev Logs Section */}
-      <section className="px-6 py-20">
-        <div className="mx-auto max-w-4xl">
+      <section className="px-6 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl">
           <SectionTitle
             title="Latest Dev Logs"
             description="Fresh insights from my learning journey"
           />
 
-          <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {sampleBlogPosts.map((post) => (
               <BlogCard
                 key={post.id}
@@ -105,7 +105,7 @@ export default function HomePage() {
           <div className="mt-10 text-center">
             <Link
               href="/blog"
-              className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors"
+              className="inline-flex items-center text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 sm:text-base"
             >
               View All Dev Logs →
             </Link>
@@ -114,14 +114,14 @@ export default function HomePage() {
       </section>
 
       {/* Browse by Topics Section */}
-      <section className="bg-white px-6 py-20">
-        <div className="mx-auto max-w-4xl">
+      <section className="bg-white px-6 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl">
           <SectionTitle
             title="Browse by Topics"
             description="Find content that interests you"
           />
 
-          <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {topics.map((topic) => (
               <TopicPill
                 key={topic.name}
@@ -135,22 +135,22 @@ export default function HomePage() {
       </section>
 
       {/* Video Learning Section */}
-      <section className="px-6 py-20">
-        <div className="mx-auto max-w-4xl">
+      <section className="px-6 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl">
           <SectionTitle
             title="Video Learning"
             description="Visual tutorials and live coding sessions"
           />
 
-          <div className="rounded-lg border border-slate-200 bg-slate-100 px-8 py-16 text-center">
+          <div className="rounded-2xl border border-slate-200 bg-slate-100 px-6 py-12 text-center sm:px-8 sm:py-16">
             <div className="mb-4 text-4xl">🎥</div>
-            <p className="mb-4 text-slate-600">
+            <p className="mx-auto mb-4 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
               Video content coming soon. Check back for tutorials and live
               coding sessions!
             </p>
             <Link
               href="/videos"
-              className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors"
+              className="inline-flex items-center text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 sm:text-base"
             >
               Visit Videos Page →
             </Link>
@@ -159,19 +159,19 @@ export default function HomePage() {
       </section>
 
       {/* Portfolio CTA Section */}
-      <section className="bg-slate-900 px-6 py-16">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold text-white">
+      <section className="bg-slate-900 px-6 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl text-center">
+          <h2 className="text-2xl font-bold text-white sm:text-3xl">
             Check Out My Portfolio
           </h2>
-          <p className="mt-4 text-slate-300">
+          <p className="mt-4 text-sm leading-6 text-slate-300 sm:text-base">
             See what I&apos;ve built and the projects I&apos;ve worked on
           </p>
           <a
             href="https://your-portfolio-link.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center rounded-lg bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-700 transition-colors"
+            className="mt-6 inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700 sm:px-6 sm:text-base"
           >
             View My Portfolio
           </a>
@@ -179,11 +179,13 @@ export default function HomePage() {
       </section>
 
       {/* About Preview Section */}
-      <section className="bg-white px-6 py-20">
-        <div className="mx-auto max-w-4xl">
-          <div className="rounded-lg border border-slate-200 bg-slate-50 p-8">
-            <h2 className="text-2xl font-bold text-slate-900">About Me</h2>
-            <p className="mt-4 text-slate-600 leading-relaxed">
+      <section className="bg-white px-6 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl">
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+            <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">
+              About Me
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
               I&apos;m a Computer Science student passionate about web
               development and AI. I learn by building projects and documenting
               my journey. This blog is my way of sharing knowledge, helping
@@ -193,7 +195,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/about"
-              className="mt-6 inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors"
+              className="mt-6 inline-flex items-center text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 sm:text-base"
             >
               Read More About Me →
             </Link>
