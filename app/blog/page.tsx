@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import SectionTitle from "@/components/SectionTitle";
 import BlogCard from "@/components/BlogCard";
 import { getAllPosts } from "@/lib/posts";
+
+export const metadata: Metadata = {
+  title: "Blog | Blog with Rafi",
+  description:
+    "Read Rafi's dev logs, coding notes, tutorials, and learning journey posts from the blog.",
+};
 
 function formatDate(date: string) {
   const parsedDate = new Date(date);

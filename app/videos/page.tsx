@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import VideoCard from "@/components/VideoCard";
+
+export const metadata: Metadata = {
+  title: "Videos | Blog with Rafi",
+  description:
+    "Watch Rafi's video learning collection with coding tutorials, resources, and embedded YouTube videos.",
+};
 
 type VideoItem = {
   title: string;
