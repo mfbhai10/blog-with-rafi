@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Blog with Rafi",
+  title: "Blog with Rafi | রাফির dev log",
   description:
-    "Rafi's personal developer blog for web development, AI lab projects, coding notes, and learning journey.",
+    "রাফির personal dev log, যেখানে web development, AI lab project, coding note, আর learning journey শেয়ার করা হয়।",
 };
 
 export default function RootLayout({
@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="bn"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-screen flex-col bg-slate-50 text-slate-900">

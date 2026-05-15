@@ -8,32 +8,31 @@ type ContactItem = {
 };
 
 export const metadata: Metadata = {
-  title: "Contact | Blog with Rafi",
+  title: "যোগাযোগ | Blog with Rafi",
   description:
-    "Get in touch with Rafi for collaboration, coding discussions, and professional connections.",
+    "রাফির সাথে collaboration, coding discussion, আর professional যোগাযোগের জন্য যোগাযোগ করুন।",
 };
 
 const contactItems: ContactItem[] = [
   {
-    label: "Email",
-    description:
-      "Send a message directly about coding, projects, or collaboration.",
+    label: "ইমেইল",
+    description: "coding, project, বা collaboration নিয়ে সরাসরি message পাঠাও।",
     href: "https://example.com/email",
   },
   {
     label: "GitHub",
-    description: "View code, projects, and the repositories I am building.",
+    description: "আমি যে code, project, আর repository বানাচ্ছি, সেগুলো দেখো।",
     href: "https://example.com/github",
   },
   {
     label: "LinkedIn",
     description:
-      "Connect for professional updates, collaboration, and networking.",
+      "পেশাদার আপডেট, collaboration, আর networking-এর জন্য যোগাযোগ করো।",
     href: "https://example.com/linkedin",
   },
   {
-    label: "Portfolio",
-    description: "Explore selected projects and work samples in one place.",
+    label: "পোর্টফোলিও",
+    description: "selected project আর work sample এক জায়গায় দেখো।",
     href: "https://example.com/portfolio",
   },
 ];
@@ -44,13 +43,14 @@ export default function ContactPage() {
       <section className="bg-linear-to-b from-slate-50 to-white px-6 py-20 sm:py-28">
         <div className="mx-auto max-w-4xl">
           <p className="mb-4 text-sm font-medium uppercase tracking-widest text-blue-600">
-            Contact
+            যোগাযোগ
           </p>
           <h1 className="text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl">
-            Contact
+            যোগাযোগ
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-600">
-            Want to connect, collaborate, or talk about coding?
+            coding, প্রজেক্ট, collaboration, বা learning নিয়ে কথা বলতে চাইলে
+            যোগাযোগ করতে পারো।
           </p>
         </div>
       </section>
@@ -58,8 +58,8 @@ export default function ContactPage() {
       <section className="px-6 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl">
           <SectionTitle
-            title="Ways to reach me"
-            description="A few places where you can find me online."
+            title="কীভাবে যোগাযোগ করবে"
+            description="অনলাইনে আমাকে খুঁজে পাওয়ার কয়েকটা জায়গা।"
           />
 
           <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
@@ -81,7 +81,7 @@ export default function ContactPage() {
                   {item.description}
                 </p>
                 <span className="mt-6 text-sm font-medium text-blue-700 transition-colors group-hover:text-blue-800">
-                  Open link →
+                  লিংক খুলুন →
                 </span>
               </a>
             ))}
@@ -93,10 +93,10 @@ export default function ContactPage() {
         <div className="mx-auto max-w-5xl">
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
             <p className="text-sm font-medium uppercase tracking-widest text-slate-500">
-              Note
+              নোট
             </p>
             <p className="mt-3 text-base leading-7 text-slate-600">
-              For now, the best way to contact me is through email or LinkedIn.
+              আপাতত email বা LinkedIn দিয়েই আমাকে সবচেয়ে ভালোভাবে পাওয়া যাবে।
             </p>
           </div>
         </div>

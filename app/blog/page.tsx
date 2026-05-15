@@ -5,9 +5,9 @@ import BlogCard from "@/components/BlogCard";
 import { getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "Blog | Blog with Rafi",
+  title: "ব্লগ | Blog with Rafi",
   description:
-    "Read Rafi's dev logs, coding notes, tutorials, and learning journey posts from the blog.",
+    "রাফির dev log, coding note, tutorial, আর শেখার journey-এর লেখা পড়ুন।",
 };
 
 function formatDate(date: string) {
@@ -17,7 +17,7 @@ function formatDate(date: string) {
     return date;
   }
 
-  return new Intl.DateTimeFormat("en-US", {
+  return new Intl.DateTimeFormat("bn-BD", {
     month: "short",
     day: "numeric",
     year: "numeric",
@@ -33,11 +33,11 @@ export default function BlogPage() {
         <div className="mx-auto max-w-5xl">
           <SectionTitle
             title="Dev Logs"
-            description="Notes, tutorials, and lessons from my coding journey."
+            description="coding শেখার পথে আমার notes, tutorials, আর ছোট ছোট lesson।"
           />
           <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-600">
-            Every post here is pulled directly from content/blog so the page
-            stays in sync with the MDX source.
+            এই পেজের সব লেখা content/blog থেকে সরাসরি আসে, তাই MDX file বদলালে
+            এখানেও আপডেট হয়ে যায়।
           </p>
         </div>
       </section>
@@ -47,7 +47,7 @@ export default function BlogPage() {
           {allPosts.length > 0 ? (
             <>
               <p className="mb-8 text-sm text-slate-600">
-                Showing {allPosts.length} posts
+                {allPosts.length}টি পোস্ট দেখানো হচ্ছে
               </p>
 
               <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
@@ -67,13 +67,13 @@ export default function BlogPage() {
             </>
           ) : (
             <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 py-16 text-center">
-              <p className="text-slate-600">No posts found yet.</p>
+              <p className="text-slate-600">এখনও কোনো পোস্ট পাওয়া যায়নি।</p>
               <div className="mt-6">
                 <Link
                   href="/"
                   className="inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700"
                 >
-                  Back to home
+                  হোমে ফিরে যান
                 </Link>
               </div>
             </div>
@@ -84,8 +84,8 @@ export default function BlogPage() {
       <section className="border-t border-slate-200 bg-white px-6 py-16">
         <div className="mx-auto max-w-5xl text-center">
           <p className="text-slate-600">
-            More posts will appear here automatically as you add MDX files to
-            content/blog.
+            content/blog-এ MDX file যোগ করলেই নতুন পোস্ট এখানে automatically
+            দেখাবে।
           </p>
         </div>
       </section>

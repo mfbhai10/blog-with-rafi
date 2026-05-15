@@ -7,11 +7,11 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "Blog", href: "/blog" },
-    { label: "Videos", href: "/videos" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
+    { label: "হোম", href: "/" },
+    { label: "ব্লগ", href: "/blog" },
+    { label: "ভিডিও", href: "/videos" },
+    { label: "আমার সম্পর্কে", href: "/about" },
+    { label: "যোগাযোগ", href: "/contact" },
   ];
 
   return (
@@ -43,7 +43,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
             >
-              Portfolio
+              পোর্টফোলিও
             </a>
           </div>
 
@@ -90,7 +90,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="rounded-lg px-2 py-1 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-50 hover:text-slate-900"
             >
-              Portfolio
+              পোর্টফোলিও
             </a>
           </div>
         )}

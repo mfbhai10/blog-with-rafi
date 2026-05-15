@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import VideoCard from "@/components/VideoCard";
 
 export const metadata: Metadata = {
-  title: "Videos | Blog with Rafi",
+  title: "ভিডিও থেকে শেখা | Blog with Rafi",
   description:
-    "Watch Rafi's video learning collection with coding tutorials, resources, and embedded YouTube videos.",
+    "coding, web development, AI, আর software engineering শেখার জন্য useful video resources দেখুন।",
 };
 
 type VideoItem = {
@@ -16,44 +16,44 @@ type VideoItem = {
 
 const videos: VideoItem[] = [
   {
-    title: "HTML & CSS Layouts That Actually Scale",
+    title: "HTML & CSS Layouts যা সত্যিই কাজ করে",
     description:
-      "A practical walkthrough of responsive layouts, spacing systems, and the small CSS decisions that make pages feel polished.",
+      "responsive layout, spacing system, আর ছোট ছোট CSS decision দিয়ে page কেমন polished হয়, সেটা দেখো।",
     category: "HTML & CSS",
     youtubeId: "dQw4w9WgXcQ",
   },
   {
-    title: "JavaScript Fundamentals for Building Real Projects",
+    title: "Real Project বানানোর জন্য JavaScript Basics",
     description:
-      "Core JavaScript concepts explained through examples you can immediately reuse in front-end projects and small apps.",
+      "front-end project আর ছোট app-এ সরাসরি ব্যবহার করা যায় এমন JavaScript concept সহজ উদাহরণে শেখা।",
     category: "JavaScript",
     youtubeId: "M7lc1UVf-VE",
   },
   {
-    title: "React Components and State, Without the Confusion",
+    title: "React Component আর State সহজভাবে",
     description:
-      "A clean introduction to component thinking, props, state, and the patterns that make React code easier to maintain.",
+      "component thinking, props, state, আর React code maintain করার সহজ pattern।",
     category: "React",
     youtubeId: "ysz5S6PUM-U",
   },
   {
-    title: "Next.js App Router Basics for Beginners",
+    title: "Beginners-এর জন্য Next.js App Router Basics",
     description:
-      "A focused guide to pages, layouts, and server components so you can build and organize modern Next.js apps confidently.",
+      "page, layout, আর server component নিয়ে focused guide, যাতে modern Next.js app confidently বানাতে পারো।",
     category: "Next.js",
     youtubeId: "HusT8K5zIJw",
   },
   {
-    title: "AI Lab Notes: Learning by Building Small Experiments",
+    title: "AI Lab Notes: ছোট experiment বানিয়ে শেখা",
     description:
-      "Short experiments, workflows, and project notes from the AI side of the learning journey, kept simple and actionable.",
+      "AI side-এর ছোট experiment, workflow, আর project note—সবই simple আর actionable।",
     category: "AI Lab",
     youtubeId: "dA0VGEbbw4g",
   },
   {
-    title: "DSA Patterns for Interviews and Practice",
+    title: "Interview আর Practice-এর জন্য DSA Pattern",
     description:
-      "A beginner-friendly overview of arrays, recursion, and problem-solving patterns that show up again and again in interviews.",
+      "array, recursion, আর problem-solving pattern-এর beginner-friendly overview, যা interview-এ বারবার আসে।",
     category: "DSA",
     youtubeId: "8hly31xKli0",
   },
@@ -65,14 +65,14 @@ export default function VideosPage() {
       <section className="bg-linear-to-b from-slate-50 to-white px-6 py-16 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-5xl">
           <p className="mb-4 text-sm font-medium uppercase tracking-widest text-blue-600">
-            Video Learning
+            ভিডিও থেকে শেখা
           </p>
           <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            Video Learning
+            ভিডিও থেকে শেখা
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:mt-8 sm:text-lg sm:leading-8">
-            A collection of coding videos, tutorials, and learning resources I
-            follow or create.
+            coding, web development, AI, আর software engineering শেখার জন্য
+            useful video resources।
           </p>
         </div>
       </section>

@@ -53,7 +53,9 @@ function parsePost(filePath: string, slug: string): Post {
   return {
     slug,
     content,
-    readingTime: `${readTime.minutes.toFixed(0)} min read`,
+    readingTime: `${new Intl.NumberFormat("bn-BD").format(
+      Math.max(1, Math.round(readTime.minutes)),
+    )} মিনিট পড়া`,
     ...frontmatter,
   };
 }

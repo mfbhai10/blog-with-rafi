@@ -28,7 +28,7 @@ function formatDate(date: string) {
     return date;
   }
 
-  return new Intl.DateTimeFormat("en-US", {
+  return new Intl.DateTimeFormat("bn-BD", {
     month: "long",
     day: "numeric",
     year: "numeric",
@@ -74,7 +74,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             href="/blog"
             className="inline-flex items-center text-sm font-medium text-blue-700 transition-colors hover:text-blue-800"
           >
-            ← Back to all posts
+            ← সব পোস্টে ফিরে যান
           </Link>
 
           <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-500">

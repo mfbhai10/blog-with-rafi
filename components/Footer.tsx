@@ -2,11 +2,11 @@ import Link from "next/link";
 
 export default function Footer() {
   const quickLinks = [
-    { label: "Home", href: "/" },
-    { label: "Blog", href: "/blog" },
-    { label: "Videos", href: "/videos" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
+    { label: "হোম", href: "/" },
+    { label: "ব্লগ", href: "/blog" },
+    { label: "ভিডিও", href: "/videos" },
+    { label: "আমার সম্পর্কে", href: "/about" },
+    { label: "যোগাযোগ", href: "/contact" },
   ];
 
   const socialLinks = [
@@ -25,15 +25,15 @@ export default function Footer() {
               Blog with Rafi
             </h3>
             <p className="text-sm leading-6 text-slate-600">
-              A personal dev log about web development, AI lab projects, coding
-              notes, and learning videos.
+              web development, AI lab project, coding note, আর learning journey
+              নিয়ে রাফির personal dev log।
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
             <h3 className="text-base font-bold tracking-tight text-slate-900">
-              Quick Links
+              দ্রুত লিংক
             </h3>
             <nav className="flex flex-col gap-2">
               {quickLinks.map((link) => (
@@ -51,7 +51,7 @@ export default function Footer() {
           {/* Social Links */}
           <div className="space-y-4">
             <h3 className="text-base font-bold tracking-tight text-slate-900">
-              Connect
+              যোগাযোগ
             </h3>
             <div className="flex flex-wrap gap-3">
               {socialLinks.map((social) => (
@@ -73,10 +73,10 @@ export default function Footer() {
         {/* Divider */}
         <div className="mt-10 border-t border-slate-200 pt-8 text-center">
           <p className="text-xs leading-6 text-slate-500">
-            Built with Next.js, Tailwind CSS, and curiosity.
+            Next.js, Tailwind CSS, আর curiosity দিয়ে বানানো।
           </p>
           <p className="mt-2 text-xs text-slate-400">
-            © {new Date().getFullYear()} Blog with Rafi. All rights reserved.
+            © {new Date().getFullYear()} Blog with Rafi. সব অধিকার সংরক্ষিত।
           </p>
         </div>
       </div>

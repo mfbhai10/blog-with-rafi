@@ -1,58 +1,58 @@
 ---
-title: "A* Search Explained Simply"
-description: "Understanding the A* pathfinding algorithm with clear explanations and visual examples. Perfect for beginners interested in algorithms and artificial intelligence."
+title: "A* Search সহজভাবে বুঝি"
+description: "A* pathfinding algorithm সহজ ভাষায় বুঝে নিই, clear explanation আর visual example দিয়ে। algorithms আর artificial intelligence-এ আগ্রহী beginners-এর জন্য উপযোগী।"
 date: "2026-05-08"
-category: "Algorithms"
-tags: ["algorithms", "pathfinding", "ai", "tutorial"]
+category: "অ্যালগরিদম"
+tags: ["অ্যালগরিদম", "পথ খোঁজা", "AI", "টিউটোরিয়াল"]
 ---
 
-## What is A\* Search?
+## A\* Search কী?
 
-A\* is a pathfinding algorithm used in games, robotics, and AI. It finds the shortest path between two points while being smarter than just trying every possible path.
+A\* হলো pathfinding algorithm, যা game, robotics, আর AI-তে ব্যবহার হয়। এটা দুইটি point-এর মধ্যে shortest path খুঁজে বের করে, কিন্তু সব possible path ট্রাই করার চেয়ে অনেক বেশি smartভাবে কাজ করে।
 
-## How Does It Work?
+## এটা কীভাবে কাজ করে?
 
-A\* combines two key ideas:
+A\* দুইটি মূল idea একসাথে ব্যবহার করে:
 
-### 1. The Cost So Far (g)
+### 1. এখন পর্যন্ত খরচ (g)
 
-How far you've already traveled from the start point.
+শুরু থেকে এখন পর্যন্ত কতদূর এগিয়েছ, সেটাই।
 
-### 2. The Estimated Cost Ahead (h)
+### 2. সামনে বাকি খরচের আন্দাজ (h)
 
-A guess of how far you still need to go to reach the goal.
+goal-এ পৌঁছাতে আর কতদূর যেতে হবে, তার একটা আন্দাজ।
 
-The algorithm always explores the most promising path first: `f = g + h`
+Algorithm সবসময় সবচেয়ে promising path আগে explore করে: `f = g + h`
 
-## A Simple Example
+## ছোট একটা উদাহরণ
 
-Imagine you're trying to find the shortest route through a city:
+ধরো, তুমি শহরের মধ্যে সবচেয়ে ছোট route খুঁজছ:
 
 ```
 Start → [paths] → Goal
 ```
 
-A\* will:
+A\* যা করবে:
 
-1. Calculate the cost of each path
-2. Estimate the remaining distance
-3. Always explore the most promising option
-4. Stop when it reaches the goal
+1. প্রতিটি path-এর cost calculate করবে
+2. বাকি distance estimate করবে
+3. সবচেয়ে promising option আগে explore করবে
+4. goal-এ পৌঁছালে থেমে যাবে
 
-## Why is it Useful?
+## এটা কেন useful?
 
-- **Games** - Finding optimal paths for NPC movement
-- **Robotics** - Navigation and path planning
-- **GPS** - Route optimization
-- **Web Applications** - Network pathfinding
+- **Games** - NPC movement-এর জন্য optimal path খুঁজতে
+- **Robotics** - Navigation আর path planning-এ
+- **GPS** - route optimize করতে
+- **Web Applications** - network pathfinding-এ
 
-## Key Advantages
+## মূল সুবিধা
 
-✅ Faster than Dijkstra's algorithm  
-✅ Guaranteed to find the shortest path  
-✅ Works with any heuristic  
-✅ Widely used in industry
+✅ Dijkstra's algorithm-এর চেয়ে দ্রুত  
+✅ shortest path খুঁজে বের করার নিশ্চয়তা থাকে  
+✅ যেকোন heuristic-এর সাথে কাজ করে  
+✅ industry-তে অনেক ব্যবহার হয়
 
-## When to Use It
+## কখন ব্যবহার করবে
 
-Use A\* when you need to find the shortest path in a large space and want better performance than exhaustive search algorithms.
+বড় space-এর মধ্যে shortest path খুঁজতে হলে এবং exhaustive search-এর চেয়ে ভালো performance চাইলে A\* ব্যবহার করো।

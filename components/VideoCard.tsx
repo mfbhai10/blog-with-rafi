@@ -51,9 +51,9 @@ export default function VideoCard({
             rel="noopener noreferrer"
             className="text-sm font-medium text-blue-700 transition-colors hover:text-blue-800"
           >
-            Watch on YouTube
+            YouTube-এ দেখুন
           </Link>
-          <span className="text-xs text-slate-500">Embedded video</span>
+          <span className="text-xs text-slate-500">এম্বেড করা ভিডিও</span>
         </div>
       </div>
     </article>

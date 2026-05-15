@@ -3,33 +3,32 @@ import SectionTitle from "@/components/SectionTitle";
 import BlogCard from "@/components/BlogCard";
 import TopicPill from "@/components/TopicPill";
 
-// Sample data - will be replaced with dynamic data from MDX later
 const sampleBlogPosts = [
   {
     id: 1,
-    title: "Getting Started with Next.js App Router",
+    title: "Next.js App Router দিয়ে শুরু",
     excerpt:
-      "Learn how to build modern React applications with Next.js App Router, including routing, layouts, and server components.",
-    date: "May 10, 2026",
-    readTime: "8 min read",
+      "Next.js App Router দিয়ে modern React app বানানোর routing, layout, আর server component basics সহজভাবে বুঝি।",
+    date: "2026-05-10",
+    readTime: "৮ মিনিট পড়া",
     topic: "Next.js",
   },
   {
     id: 2,
-    title: "React Hooks Deep Dive: useEffect and useContext",
+    title: "React Hooks: useEffect আর useContext",
     excerpt:
-      "Understand the fundamentals of React hooks and how to manage side effects and global state in your applications.",
-    date: "May 5, 2026",
-    readTime: "12 min read",
+      "React hooks-এর মূল ধারণা আর side effect, global state manage করার সহজ ব্যাখ্যা।",
+    date: "2026-05-05",
+    readTime: "১২ মিনিট পড়া",
     topic: "React",
   },
   {
     id: 3,
-    title: "JavaScript Async/Await Patterns You Should Know",
+    title: "JavaScript Async/Await প্যাটার্ন",
     excerpt:
-      "Master asynchronous JavaScript with practical examples and patterns for handling promises and errors gracefully.",
-    date: "April 28, 2026",
-    readTime: "10 min read",
+      "Promise আর error handle করার practical pattern দিয়ে asynchronous JavaScript সহজ করি।",
+    date: "2026-04-28",
+    readTime: "১০ মিনিট পড়া",
     topic: "JavaScript",
   },
 ];
@@ -39,28 +38,26 @@ const topics = [
   { name: "Next.js", count: 8 },
   { name: "JavaScript", count: 15 },
   { name: "TypeScript", count: 6 },
-  { name: "Web Development", count: 10 },
+  { name: "ওয়েব ডেভেলপমেন্ট", count: 10 },
   { name: "AI & ML", count: 4 },
 ];
 
 export default function HomePage() {
   return (
     <div className="w-full">
-      {/* Hero Section */}
       <section className="bg-linear-to-b from-slate-50 to-white px-6 py-16 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-5xl">
           <p className="mb-4 text-sm font-medium uppercase tracking-widest text-blue-600">
-            Welcome to my dev log
+            আমার dev log-এ স্বাগতম
           </p>
 
           <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            Hi, I&apos;m Rafi.
+            হাই, আমি রাফি। আমার dev log-এ স্বাগতম।
           </h1>
 
           <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:mt-8 sm:text-lg sm:leading-8">
-            I write beginner-friendly notes about web development, AI lab
-            projects, coding mistakes, and everything I learn while becoming a
-            better developer.
+            আমি web development, AI lab project, coding note, আর একজন CSE
+            student হিসেবে শেখার journey নিয়ে সহজ ভাষায় লিখি।
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3 sm:mt-10 sm:gap-4">
@@ -68,24 +65,23 @@ export default function HomePage() {
               href="/blog"
               className="inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700 sm:px-6 sm:text-base"
             >
-              Read Dev Logs
+              Dev Log পড়ুন
             </Link>
             <Link
               href="/about"
               className="inline-flex items-center rounded-lg border border-slate-300 px-5 py-3 text-sm font-medium text-slate-900 transition-colors hover:bg-slate-100 sm:px-6 sm:text-base"
             >
-              Learn More About Me
+              আমার সম্পর্কে জানুন
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Latest Dev Logs Section */}
       <section className="px-6 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl">
           <SectionTitle
-            title="Latest Dev Logs"
-            description="Fresh insights from my learning journey"
+            title="নতুন dev log"
+            description="আমার শেখার journey থেকে নতুন লেখা।"
           />
 
           <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
@@ -106,18 +102,17 @@ export default function HomePage() {
               href="/blog"
               className="inline-flex items-center text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 sm:text-base"
             >
-              View All Dev Logs →
+              সব Dev Log দেখুন →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Browse by Topics Section */}
       <section className="bg-white px-6 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl">
           <SectionTitle
-            title="Browse by Topics"
-            description="Find content that interests you"
+            title="টপিক অনুযায়ী পড়ুন"
+            description="যে বিষয়গুলো তোমার কাজে লাগবে, সেগুলো বেছে নাও।"
           />
 
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -133,38 +128,36 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Video Learning Section */}
       <section className="px-6 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl">
           <SectionTitle
-            title="Video Learning"
-            description="Visual tutorials and live coding sessions"
+            title="ভিডিও থেকে শেখা"
+            description="চোখে দেখা tutorials আর live coding session।"
           />
 
           <div className="rounded-2xl border border-slate-200 bg-slate-100 px-6 py-12 text-center sm:px-8 sm:py-16">
             <div className="mb-4 text-4xl">🎥</div>
             <p className="mx-auto mb-4 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
-              Video content coming soon. Check back for tutorials and live
-              coding sessions!
+              শিগগিরই নতুন video content আসছে। tutorials আর live coding
+              session-এর জন্য আবার দেখো!
             </p>
             <Link
               href="/videos"
               className="inline-flex items-center text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 sm:text-base"
             >
-              Visit Videos Page →
+              ভিডিও পেজ দেখুন →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Portfolio CTA Section */}
       <section className="bg-slate-900 px-6 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="text-2xl font-bold text-white sm:text-3xl">
-            Check Out My Portfolio
+            আমার কাজগুলো দেখুন
           </h2>
           <p className="mt-4 text-sm leading-6 text-slate-300 sm:text-base">
-            See what I&apos;ve built and the projects I&apos;ve worked on
+            আমি কী কী বানিয়েছি আর কোন project-এ কাজ করেছি, একবার দেখে নাও।
           </p>
           <a
             href="https://mfr-portfolio.vercel.app/"
@@ -172,31 +165,28 @@ export default function HomePage() {
             rel="noopener noreferrer"
             className="mt-6 inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700 sm:px-6 sm:text-base"
           >
-            View My Portfolio
+            পোর্টফোলিও দেখুন
           </a>
         </div>
       </section>
 
-      {/* About Preview Section */}
       <section className="bg-white px-6 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl">
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
             <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">
-              About Me
+              রাফি সম্পর্কে
             </h2>
             <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
-              I&apos;m a Computer Science student passionate about web
-              development and AI. I learn by building projects and documenting
-              my journey. This blog is my way of sharing knowledge, helping
-              others, and reinforcing what I&apos;ve learned. When I&apos;m not
-              coding, I enjoy exploring new technologies and solving complex
-              problems.
+              আমি web development আর AI নিয়ে আগ্রহী একজন Computer Science
+              student। আমি project বানিয়ে শিখি আর সেই journey-টা এখানে লিখে
+              রাখি। এই blog আমার personal dev log, যেখানে coding note, project,
+              আর শেখার অভিজ্ঞতা শেয়ার করি।
             </p>
             <Link
               href="/about"
               className="mt-6 inline-flex items-center text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 sm:text-base"
             >
-              Read More About Me →
+              আরও পড়ুন →
             </Link>
           </div>
         </div>

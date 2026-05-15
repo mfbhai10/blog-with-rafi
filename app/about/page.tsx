@@ -3,9 +3,9 @@ import Link from "next/link";
 import SectionTitle from "@/components/SectionTitle";
 
 export const metadata: Metadata = {
-  title: "About | Blog with Rafi",
+  title: "আমার সম্পর্কে | Blog with Rafi",
   description:
-    "Learn more about Rafi, a Computer Science and Engineering student at United International University who shares his learning journey through blog posts and dev logs.",
+    "রাফি, United International University-এর Computer Science and Engineering student, web development, AI, আর software engineering শেখার journey শেয়ার করে।",
 };
 
 const learningAreas = [
@@ -29,11 +29,11 @@ const techStack = [
 ];
 
 const writingTopics = [
-  "Coding notes",
+  "Coding note",
   "AI lab work",
-  "Web development tutorials",
-  "Projects",
-  "Learning journey updates",
+  "Web development tutorial",
+  "Project",
+  "Learning journey update",
 ];
 
 export default function AboutPage() {
@@ -42,14 +42,14 @@ export default function AboutPage() {
       <section className="bg-linear-to-b from-slate-50 to-white px-6 py-20 sm:py-28">
         <div className="mx-auto max-w-4xl">
           <p className="mb-4 text-sm font-medium uppercase tracking-widest text-blue-600">
-            About Me
+            আমার সম্পর্কে
           </p>
           <h1 className="text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl">
-            Hi, I&apos;m Rafi.
+            হাই, আমি রাফি।
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-600">
-            I&apos;m a Computer Science and Engineering student at United
-            International University, and this blog is my personal dev log.
+            আমি United International University-এর Computer Science and
+            Engineering student। এই blog আমার personal dev log।
           </p>
         </div>
       </section>
@@ -58,39 +58,40 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-2">
           <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
             <SectionTitle
-              title="Intro"
-              description="A short introduction to who I am and what this site is for."
+              title="পরিচিতি"
+              description="আমি কে আর এই site টা কী জন্য, তার ছোট পরিচয়।"
             />
             <p className="text-base leading-7 text-slate-600">
-              I am Rafi, a Computer Science and Engineering student at United
-              International University. I use this space to document what I am
-              learning, what I am building, and the ideas that shape my growth
-              as a developer.
+              আমি রাফি। United International University-এর Computer Science and
+              Engineering student হিসেবে web development, full-stack
+              development, AI, আর software engineering শিখছি। এই space-এ আমি যা
+              শিখছি, যা বানাচ্ছি, আর developer হিসেবে কীভাবে grow করছি, তা লিখে
+              রাখি।
             </p>
           </div>
 
           <div className="rounded-2xl border border-slate-200 bg-slate-900 p-8 shadow-sm">
             <SectionTitle
-              title="My goal"
-              description="What I want this blog to become over time."
+              title="আমার লক্ষ্য"
+              description="এই blog-টাকে আমি কী বানাতে চাই।"
             />
             <p className="text-base leading-7 text-slate-300">
-              My goal is to keep improving through consistent practice, share
-              useful notes with others, and build a record of my progress in web
-              development, AI, and software engineering.
+              আমার লক্ষ্য হলো নিয়মিত practice করে আরও ভালো হওয়া, useful note
+              শেয়ার করা, আর web development, AI, software engineering-এ আমার
+              progress-এর একটা record রাখা।
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
                 href="/blog"
                 className="inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700"
               >
-                Read Dev Logs
+                Dev Log পড়ুন
               </Link>
               <Link
                 href="/videos"
                 className="inline-flex items-center rounded-lg border border-slate-700 px-5 py-3 text-sm font-medium text-slate-100 transition-colors hover:bg-slate-800"
               >
-                Explore Videos
+                ভিডিও দেখুন
               </Link>
             </div>
           </div>
@@ -100,8 +101,8 @@ export default function AboutPage() {
       <section className="px-6 py-16">
         <div className="mx-auto max-w-5xl">
           <SectionTitle
-            title="What I am learning"
-            description="The areas I focus on as I grow as a developer."
+            title="আমি কী শিখছি"
+            description="Developer হিসেবে grow করার জন্য যেগুলোতে focus করছি।"
           />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {learningAreas.map((area) => (
@@ -119,8 +120,8 @@ export default function AboutPage() {
       <section className="bg-white px-6 py-16">
         <div className="mx-auto max-w-5xl">
           <SectionTitle
-            title="What I write about"
-            description="Topics I turn into notes, tutorials, and learning logs."
+            title="আমি কী লিখি"
+            description="যে বিষয়গুলোকে note, tutorial, আর learning log-এ বদলে দিই।"
           />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {writingTopics.map((topic) => (
@@ -140,8 +141,8 @@ export default function AboutPage() {
       <section className="px-6 py-16">
         <div className="mx-auto max-w-5xl">
           <SectionTitle
-            title="Current tech stack"
-            description="Tools and technologies I use while learning and building."
+            title="বর্তমান tech stack"
+            description="শেখা আর বানানোর সময় আমি যে tools আর technologies ব্যবহার করি।"
           />
           <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {techStack.map((tech) => (
@@ -160,13 +161,13 @@ export default function AboutPage() {
         <div className="mx-auto max-w-5xl">
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-8 sm:p-10">
             <h2 className="text-3xl font-bold tracking-tight text-slate-900">
-              My goal
+              আমার লক্ষ্য
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600">
-              I want to keep learning in public, build useful projects, and
-              share the lessons I pick up along the way. This blog is where I
-              collect those notes so they stay useful for me and for anyone else
-              following a similar path.
+              আমি public-এ শেখা চালিয়ে যেতে চাই, useful project বানাতে চাই, আর
+              পথে পাওয়া lesson গুলো শেয়ার করতে চাই। এই blog-এ আমি সেই note গুলো
+              গুছিয়ে রাখি, যাতে সেগুলো আমার জন্য আর একই পথে হাঁটা অন্যদের জন্যও
+              কাজে লাগে।
             </p>
           </div>
         </div>
