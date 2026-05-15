@@ -21,6 +21,17 @@ const config: Config = {
         border: "var(--border)",
         "code-bg": "var(--code-bg)",
       },
+      fontFamily: {
+        heading: ["var(--font-heading)", "ui-sans-serif", "system-ui"],
+        body: ["var(--font-body)", "ui-sans-serif", "system-ui"],
+        code: [
+          "var(--font-code)",
+          "ui-monospace",
+          "SFMono-Regular",
+          "Menlo",
+          "monospace",
+        ],
+      },
       boxShadow: {
         sm: "var(--shadow-sm)",
         md: "var(--shadow-md)",
