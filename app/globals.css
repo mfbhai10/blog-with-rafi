@@ -18,6 +18,7 @@
   --radius-md: 12px;
   --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.04);
   --shadow-md: 0 6px 20px rgba(16, 24, 40, 0.08);
+  color-scheme: light;
 }
 
 /* Dark theme toggled via the .dark class on the document root */
@@ -33,13 +34,14 @@
   --accent: #a78bfa;
   --accent-soft: #2e1065;
   --code-bg: #111827;
+  color-scheme: dark;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--text-primary);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-code);
 }
 
 /* Global transitions for color-related properties (respect reduced motion) */
