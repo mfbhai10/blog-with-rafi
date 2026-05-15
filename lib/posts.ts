@@ -88,8 +88,17 @@ export function getAllPosts(): PostPreview[] {
       const post = getPostBySlug(slug);
       if (!post) return null;
 
-      const { content, ...preview } = post;
-      return preview as PostPreview;
+      const preview: PostPreview = {
+        slug: post.slug,
+        title: post.title,
+        description: post.description,
+        date: post.date,
+        category: post.category,
+        tags: post.tags,
+        readingTime: post.readingTime,
+      };
+
+      return preview;
     })
     .filter((post): post is PostPreview => post !== null);
 

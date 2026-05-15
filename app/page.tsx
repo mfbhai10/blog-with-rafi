@@ -2,7 +2,6 @@ import Link from "next/link";
 import SectionTitle from "@/components/SectionTitle";
 import BlogCard from "@/components/BlogCard";
 import TopicPill from "@/components/TopicPill";
-import VideoCard from "@/components/VideoCard";
 
 // Sample data - will be replaced with dynamic data from MDX later
 const sampleBlogPosts = [
@@ -168,7 +167,7 @@ export default function HomePage() {
             See what I&apos;ve built and the projects I&apos;ve worked on
           </p>
           <a
-            href="https://your-portfolio-link.com"
+            href="https://mfr-portfolio.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-6 inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700 sm:px-6 sm:text-base"

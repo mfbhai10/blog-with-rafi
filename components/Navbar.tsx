@@ -85,7 +85,7 @@ export default function Navbar() {
               </Link>
             ))}
             <a
-              href="https://your-portfolio-link.com"
+              href="https://mfr-portfolio.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg px-2 py-1 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-50 hover:text-slate-900"
