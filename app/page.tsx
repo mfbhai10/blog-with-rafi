@@ -1,4 +1,8 @@
 import Link from "next/link";
+import SectionTitle from "@/components/SectionTitle";
+import BlogCard from "@/components/BlogCard";
+import TopicPill from "@/components/TopicPill";
+import VideoCard from "@/components/VideoCard";
 
 // Sample data - will be replaced with dynamic data from MDX later
 const sampleBlogPosts = [
@@ -80,37 +84,21 @@ export default function HomePage() {
       {/* Latest Dev Logs Section */}
       <section className="px-6 py-20">
         <div className="mx-auto max-w-4xl">
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-slate-900">
-              Latest Dev Logs
-            </h2>
-            <p className="mt-2 text-slate-600">
-              Fresh insights from my learning journey
-            </p>
-          </div>
+          <SectionTitle
+            title="Latest Dev Logs"
+            description="Fresh insights from my learning journey"
+          />
 
           <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3">
             {sampleBlogPosts.map((post) => (
-              <div
+              <BlogCard
                 key={post.id}
-                className="flex flex-col rounded-lg border border-slate-200 bg-white p-6 hover:shadow-md transition-shadow"
-              >
-                <div className="mb-3 flex items-center gap-2">
-                  <span className="inline-flex rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-700">
-                    {post.topic}
-                  </span>
-                </div>
-                <h3 className="mb-2 text-xl font-semibold text-slate-900 line-clamp-2">
-                  {post.title}
-                </h3>
-                <p className="mb-4 flex-1 text-slate-600 line-clamp-3">
-                  {post.excerpt}
-                </p>
-                <div className="flex items-center justify-between text-sm text-slate-500">
-                  <span>{post.date}</span>
-                  <span>{post.readTime}</span>
-                </div>
-              </div>
+                title={post.title}
+                description={post.excerpt}
+                category={post.topic}
+                date={post.date}
+                readingTime={post.readTime}
+              />
             ))}
           </div>
 
@@ -128,29 +116,19 @@ export default function HomePage() {
       {/* Browse by Topics Section */}
       <section className="bg-white px-6 py-20">
         <div className="mx-auto max-w-4xl">
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-slate-900">
-              Browse by Topics
-            </h2>
-            <p className="mt-2 text-slate-600">
-              Find content that interests you
-            </p>
-          </div>
+          <SectionTitle
+            title="Browse by Topics"
+            description="Find content that interests you"
+          />
 
           <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3">
             {topics.map((topic) => (
-              <Link
+              <TopicPill
                 key={topic.name}
+                label={topic.name}
+                count={topic.count}
                 href={`/blog?topic=${topic.name.toLowerCase()}`}
-                className="flex items-center justify-between rounded-lg border border-slate-200 px-4 py-3 hover:border-blue-300 hover:bg-blue-50 transition-colors group"
-              >
-                <span className="font-medium text-slate-900 group-hover:text-blue-600">
-                  {topic.name}
-                </span>
-                <span className="text-sm text-slate-500 group-hover:text-blue-600">
-                  {topic.count}
-                </span>
-              </Link>
+              />
             ))}
           </div>
         </div>
@@ -159,14 +137,10 @@ export default function HomePage() {
       {/* Video Learning Section */}
       <section className="px-6 py-20">
         <div className="mx-auto max-w-4xl">
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-slate-900">
-              Video Learning
-            </h2>
-            <p className="mt-2 text-slate-600">
-              Visual tutorials and live coding sessions
-            </p>
-          </div>
+          <SectionTitle
+            title="Video Learning"
+            description="Visual tutorials and live coding sessions"
+          />
 
           <div className="rounded-lg border border-slate-200 bg-slate-100 px-8 py-16 text-center">
             <div className="mb-4 text-4xl">🎥</div>

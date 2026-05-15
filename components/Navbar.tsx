@@ -38,7 +38,7 @@ export default function Navbar() {
               </Link>
             ))}
             <a
-              href="https://your-portfolio-link.com"
+              href="https://mfr-portfolio.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-600 hover:text-slate-900 transition-colors text-sm font-medium"
