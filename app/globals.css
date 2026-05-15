@@ -1,20 +1,69 @@
 @import "tailwindcss";
 
+/* Design tokens — Midnight Developer + Purple Accent */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  color-scheme: light;
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --surface-soft: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --accent: #7c3aed;
+  --accent-soft: #f3e8ff;
+  --code-bg: #f1f5f9;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-md: 0 6px 20px rgba(16, 24, 40, 0.08);
+}
+
+/* Dark theme toggled via the .dark class on the document root */
+.dark {
+  --background: #020617;
+  --surface: #0f172a;
+  --surface-soft: #111827;
+  --text-primary: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: #1e293b;
+  --primary: #60a5fa;
+  --primary-hover: #93c5fd;
+  --accent: #a78bfa;
+  --accent-soft: #2e1065;
+  --code-bg: #111827;
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-foreground: var(--text-primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+/* Global transitions for color-related properties (respect reduced motion) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
+
+*,
+*::before,
+*::after {
+  transition:
+    background-color 240ms ease,
+    color 240ms ease,
+    border-color 240ms ease,
+    fill 240ms ease,
+    stroke 240ms ease;
+}
+
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-primary);
+  font-family: Inter, Arial, Helvetica, sans-serif;
 }
