@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface VideoCardProps {
   title: string;
   description: string;
@@ -11,40 +13,49 @@ export default function VideoCard({
   category,
   youtubeId,
 }: VideoCardProps) {
-  const thumbnailUrl = `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`;
+  const videoUrl = `https://www.youtube.com/embed/${youtubeId}`;
 
   return (
-    <a
-      href={`https://youtube.com/watch?v=${youtubeId}`}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <div className="flex flex-col rounded-lg border border-slate-200 bg-white overflow-hidden hover:shadow-md transition-shadow cursor-pointer">
-        {/* Thumbnail */}
-        <div className="relative aspect-video bg-slate-200 overflow-hidden">
-          <img
-            src={thumbnailUrl}
-            alt={title}
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity">
-            <div className="text-4xl text-white">▶</div>
-          </div>
+    <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg">
+      <div className="aspect-video bg-slate-100">
+        <iframe
+          src={videoUrl}
+          title={title}
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          referrerPolicy="strict-origin-when-cross-origin"
+          className="h-full w-full"
+        />
+      </div>
+
+      <div className="flex flex-1 flex-col p-5">
+        <div className="mb-3 flex items-center gap-2">
+          <span className="inline-flex rounded-full bg-red-100 px-3 py-1 text-xs font-medium text-red-700">
+            {category}
+          </span>
         </div>
 
-        {/* Content */}
-        <div className="flex flex-1 flex-col p-4">
-          <div className="mb-2 flex items-center gap-2">
-            <span className="inline-flex rounded-full bg-red-100 px-2 py-1 text-xs font-medium text-red-700">
-              {category}
-            </span>
-          </div>
-          <h3 className="mb-2 text-lg font-semibold text-slate-900 line-clamp-2">
-            {title}
-          </h3>
-          <p className="text-sm text-slate-600 line-clamp-2">{description}</p>
+        <h3 className="mb-2 text-lg font-semibold tracking-tight text-slate-900 line-clamp-2">
+          {title}
+        </h3>
+
+        <p className="mb-4 flex-1 text-sm leading-6 text-slate-600 line-clamp-3">
+          {description}
+        </p>
+
+        <div className="mt-auto flex items-center justify-between gap-3 border-t border-slate-100 pt-4">
+          <Link
+            href={`https://youtube.com/watch?v=${youtubeId}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-blue-700 transition-colors hover:text-blue-800"
+          >
+            Watch on YouTube
+          </Link>
+          <span className="text-xs text-slate-500">Embedded video</span>
         </div>
       </div>
-    </a>
+    </article>
   );
 }
