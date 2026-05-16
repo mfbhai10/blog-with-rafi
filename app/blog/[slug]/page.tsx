@@ -67,54 +67,59 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const hasTags = post.tags.length > 0;
 
   return (
-    <main className="px-6 py-16 sm:py-20">
+    <main className="px-4 py-16 sm:px-6 sm:py-20">
       <article className="mx-auto max-w-3xl">
-        <div className="mb-10">
+        <div className="relative overflow-hidden rounded-4xl border border-border bg-linear-to-br from-surface via-surface-soft/80 to-background p-6 shadow-sm sm:p-8 lg:p-10">
+          <div className="absolute right-0 top-0 -z-10 h-44 w-44 rounded-full bg-primary/10 blur-3xl" />
+          <div className="absolute bottom-0 left-0 -z-10 h-44 w-44 rounded-full bg-accent/10 blur-3xl" />
+
           <Link
             href="/blog"
-            className="inline-flex items-center text-sm font-medium text-blue-700 transition-colors hover:text-blue-800"
+            className="inline-flex items-center text-sm font-medium text-accent transition-colors duration-300 hover:text-primary"
           >
             ← সব পোস্টে ফিরে যান
           </Link>
 
-          <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-500">
-            <span className="inline-flex rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-700">
-              {post.category}
-            </span>
-            <span>{formatDate(post.date)}</span>
-            <span>{post.readingTime}</span>
-          </div>
-
-          <h1 className="mt-5 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-            {post.title}
-          </h1>
-
-          <p className="mt-5 text-lg leading-8 text-slate-600">
-            {post.description}
-          </p>
-
-          {hasTags ? (
-            <div className="mt-6 flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-sm font-medium text-slate-700"
-                >
-                  #{tag}
-                </span>
-              ))}
+          <header className="mt-6">
+            <div className="flex flex-wrap items-center gap-3 text-sm text-muted">
+              <span className="inline-flex rounded-full bg-accent-soft px-3 py-1 font-medium text-accent">
+                {post.category}
+              </span>
+              <span>{formatDate(post.date)}</span>
+              <span>{post.readingTime}</span>
             </div>
-          ) : null}
+
+            <h1 className="mt-5 font-heading text-4xl font-bold tracking-tight text-primary sm:text-5xl lg:text-6xl">
+              {post.title}
+            </h1>
+
+            <p className="mt-5 max-w-2xl text-[17px] leading-8 text-muted sm:text-lg">
+              {post.description}
+            </p>
+
+            {hasTags ? (
+              <div className="mt-6 flex flex-wrap gap-2">
+                {post.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex rounded-full border border-border bg-surface px-3 py-1 text-sm font-medium text-primary transition-colors duration-300 hover:border-primary/40 hover:bg-accent-soft hover:text-accent"
+                  >
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+            ) : null}
+          </header>
         </div>
 
-        <div className="border-t border-slate-200 pt-10">
-          <div className="markdown-content text-base leading-7 text-slate-700">
+        <div className="mx-auto mt-10 max-w-3xl rounded-4xl border border-border bg-surface p-6 shadow-sm sm:p-8 lg:p-10">
+          <div className="blog-article text-[17px] leading-8 text-primary sm:text-lg sm:leading-9">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={{
                 h1: ({ children, ...props }: MarkdownHeadingProps) => (
                   <h2
-                    className="mt-10 mb-4 text-3xl font-bold tracking-tight text-slate-900"
+                    className="mt-12 mb-5 font-heading text-3xl font-bold tracking-tight text-primary"
                     {...props}
                   >
                     {children}
@@ -122,7 +127,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 ),
                 h2: ({ children, ...props }: MarkdownHeadingProps) => (
                   <h2
-                    className="mt-10 mb-4 text-3xl font-bold tracking-tight text-slate-900"
+                    className="mt-12 mb-5 font-heading text-3xl font-bold tracking-tight text-primary"
                     {...props}
                   >
                     {children}
@@ -130,24 +135,33 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 ),
                 h3: ({ children, ...props }: MarkdownHeadingProps) => (
                   <h3
-                    className="mt-8 mb-3 text-2xl font-semibold tracking-tight text-slate-900"
+                    className="mt-10 mb-4 font-heading text-2xl font-semibold tracking-tight text-primary"
                     {...props}
                   >
                     {children}
                   </h3>
                 ),
                 p: ({ children, ...props }: MarkdownParagraphProps) => (
-                  <p className="mb-5 text-slate-700" {...props}>
+                  <p
+                    className="mb-6 text-[17px] leading-8 text-primary/90 sm:text-lg"
+                    {...props}
+                  >
                     {children}
                   </p>
                 ),
                 ul: ({ children, ...props }: MarkdownListProps) => (
-                  <ul className="mb-6 ml-6 list-disc space-y-2" {...props}>
+                  <ul
+                    className="mb-6 ml-6 list-disc space-y-2 text-[17px] leading-8 text-primary/90 sm:text-lg"
+                    {...props}
+                  >
                     {children}
                   </ul>
                 ),
                 ol: ({ children, ...props }: MarkdownOrderedListProps) => (
-                  <ol className="mb-6 ml-6 list-decimal space-y-2" {...props}>
+                  <ol
+                    className="mb-6 ml-6 list-decimal space-y-2 text-[17px] leading-8 text-primary/90 sm:text-lg"
+                    {...props}
+                  >
                     {children}
                   </ol>
                 ),
@@ -161,15 +175,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   ...props
                 }: MarkdownBlockquoteProps) => (
                   <blockquote
-                    className="mb-6 border-l-4 border-blue-200 bg-blue-50 px-5 py-4 text-slate-700"
+                    className="my-8 rounded-3xl border border-border bg-surface-soft px-5 py-5 text-primary/90 shadow-sm sm:px-6"
                     {...props}
                   >
-                    {children}
+                    <div className="border-l-4 border-accent pl-4 italic text-[17px] leading-8 text-primary/90 sm:text-lg">
+                      {children}
+                    </div>
                   </blockquote>
                 ),
                 a: ({ children, href, ...props }: MarkdownAnchorProps) => (
                   <a
-                    className="font-medium text-blue-700 underline decoration-blue-200 underline-offset-4 transition-colors hover:text-blue-800 hover:decoration-blue-400"
+                    className="font-medium text-primary underline decoration-accent/30 decoration-2 underline-offset-4 transition-colors duration-300 hover:text-accent hover:decoration-accent"
                     href={href}
                     {...props}
                   >
@@ -186,7 +202,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   if (isInline) {
                     return (
                       <code
-                        className="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-[0.9em] text-slate-900"
+                        className="rounded-md border border-border bg-code-bg px-1.5 py-0.5 font-mono text-[0.9em] text-primary"
                         {...props}
                       >
                         {children}
@@ -196,7 +212,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
                   return (
                     <code
-                      className="block overflow-x-auto rounded-2xl bg-slate-950 px-5 py-4 font-mono text-sm leading-7 text-slate-100"
+                      className="block overflow-x-auto rounded-3xl bg-code-bg px-5 py-4 font-mono text-sm leading-7 text-primary"
                       {...props}
                     >
                       {children}
@@ -205,14 +221,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 },
                 pre: ({ children, ...props }) => (
                   <pre
-                    className="mb-6 overflow-x-auto rounded-2xl bg-slate-950 p-0"
+                    className="my-6 overflow-x-auto rounded-3xl border border-border bg-code-bg p-0"
                     {...props}
                   >
                     {children}
                   </pre>
                 ),
                 hr: (props) => (
-                  <hr className="my-10 border-slate-200" {...props} />
+                  <hr className="my-10 border-border" {...props} />
                 ),
                 img: () => null,
               }}
