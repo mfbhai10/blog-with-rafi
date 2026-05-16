@@ -45,34 +45,86 @@ const topics = [
 export default function HomePage() {
   return (
     <div className="w-full">
-      <section className="bg-linear-to-b from-slate-50 to-white px-6 py-16 sm:py-24 lg:py-28">
-        <div className="mx-auto max-w-5xl">
-          <p className="mb-4 text-sm font-medium uppercase tracking-widest text-blue-600">
-            আমার dev log-এ স্বাগতম
-          </p>
+      <section className="relative overflow-hidden px-6 py-16 sm:py-20 lg:py-28">
+        <div className="absolute inset-0 -z-10 bg-background" />
+        <div className="absolute left-1/2 top-0 -z-10 h-80 w-80 -translate-x-1/2 rounded-full bg-primary/15 blur-3xl sm:h-96 sm:w-96" />
+        <div className="absolute right-0 top-24 -z-10 h-72 w-72 rounded-full bg-accent/10 blur-3xl sm:h-80 sm:w-80" />
 
-          <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            হাই, আমি রাফি। আমার dev log-এ স্বাগতম।
-          </h1>
+        <div className="mx-auto grid max-w-5xl items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:gap-10">
+          <div className="relative">
+            <div className="mb-5 inline-flex items-center rounded-full border border-border bg-surface/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-muted shadow-sm backdrop-blur">
+              Personal Developer Blog
+            </div>
 
-          <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:mt-8 sm:text-lg sm:leading-8">
-            আমি web development, AI lab project, coding note, আর একজন CSE
-            student হিসেবে শেখার journey নিয়ে সহজ ভাষায় লিখি।
-          </p>
+            <h1 className="max-w-3xl font-heading text-4xl font-bold tracking-tight text-primary sm:text-5xl lg:text-6xl xl:text-7xl">
+              হাই, আমি রাফি। আমার dev log-এ স্বাগতম।
+            </h1>
 
-          <div className="mt-8 flex flex-wrap gap-3 sm:mt-10 sm:gap-4">
-            <Link
-              href="/blog"
-              className="inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700 sm:px-6 sm:text-base"
-            >
-              Dev Log পড়ুন
-            </Link>
-            <Link
-              href="/about"
-              className="inline-flex items-center rounded-lg border border-slate-300 px-5 py-3 text-sm font-medium text-slate-900 transition-colors hover:bg-slate-100 sm:px-6 sm:text-base"
-            >
-              আমার সম্পর্কে জানুন
-            </Link>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-muted sm:mt-8 sm:text-lg sm:leading-8 lg:text-xl">
+              আমি web development, AI lab project, coding note, আর একজন CSE
+              student হিসেবে শেখার journey নিয়ে সহজ ভাষায় লিখি।
+            </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4">
+              <Link
+                href="/blog"
+                className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-white shadow-md shadow-primary/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-hover sm:px-7 sm:text-base"
+              >
+                ব্লগ পড়ুন
+              </Link>
+              <Link
+                href="/videos"
+                className="inline-flex items-center justify-center rounded-full border border-border bg-surface/80 px-6 py-3.5 text-sm font-semibold text-primary shadow-sm backdrop-blur transition-all duration-200 hover:-translate-y-0.5 hover:bg-surface hover:shadow-md sm:px-7 sm:text-base"
+              >
+                ভিডিও দেখুন
+              </Link>
+              <a
+                href="https://mfr-portfolio.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-border bg-transparent px-6 py-3.5 text-sm font-semibold text-muted transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary sm:px-7 sm:text-base"
+              >
+                পোর্টফোলিও দেখুন
+              </a>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute -inset-4 -z-10 rounded-4xl bg-linear-to-br from-primary/15 via-transparent to-accent/15 blur-2xl" />
+            <div className="rounded-[1.75rem] border border-border bg-surface/85 p-5 shadow-md backdrop-blur sm:p-6 lg:p-7">
+              <div className="mb-5 flex items-center justify-between gap-3 border-b border-border pb-4">
+                <div>
+                  <p className="text-sm font-semibold text-primary">
+                    শেখার সারাংশ
+                  </p>
+                  <p className="mt-1 text-sm text-muted">
+                    আমি যেসব জিনিসে সময় দিচ্ছি, তার ছোট্ট সারাংশ এখানে।
+                  </p>
+                </div>
+                <div className="h-11 w-11 rounded-2xl bg-linear-to-br from-primary/20 to-accent/20" />
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-2">
+                {[
+                  { label: "Web Development", value: "ফ্রন্টএন্ড, layout, UI" },
+                  { label: "AI Lab Notes", value: "পরীক্ষা আর শেখা" },
+                  { label: "Learning Videos", value: "সংক্ষিপ্ত explainers" },
+                  { label: "Projects", value: "build, ship, improve" },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="rounded-2xl border border-border bg-background/70 p-4 transition-transform duration-200 hover:-translate-y-0.5"
+                  >
+                    <p className="text-sm font-semibold text-primary">
+                      {item.label}
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-muted">
+                      {item.value}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
