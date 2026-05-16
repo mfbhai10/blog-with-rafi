@@ -11,6 +11,34 @@ export const metadata: Metadata = {
 const learningAreas = [
   "Web development",
   "Frontend development",
+  "Full-stack development",
+  "AI",
+  "Software engineering",
+];
+
+const techStack = [
+  "HTML",
+  "CSS",
+  "Tailwind CSS",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Python",
+  "Django",
+];
+
+const writingTopics = [
+  "Coding note",
+  "AI lab work",
+  "Web development tutorial",
+  "Project",
+  "Learning journey update",
+];
+
+export default function AboutPage() {
+  return (
+    <div className="w-full">
       <section className="relative overflow-hidden px-4 py-16 sm:px-6 sm:py-20">
         <div className="absolute inset-0 -z-10 bg-background" />
         <div className="absolute left-1/2 top-0 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/12 blur-3xl sm:h-96 sm:w-96" />
@@ -31,30 +59,30 @@ const learningAreas = [
               </p>
             </div>
           </div>
-  "Next.js",
-  "Python",
-  "Django",
+        </div>
+      </section>
+
       <section className="px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2">
           <div className="rounded-4xl border border-border bg-surface p-6 shadow-sm sm:p-8 lg:p-10">
-  "Coding note",
+            <SectionTitle
               title="আমি কে"
               description="আমি কে আর এই space টা কী জন্য, তার ছোট পরিচয়।"
-  "Project",
+            />
             <p className="text-sm leading-7 text-muted sm:text-base">
-];
+              আমি রাফি। United International University-এর Computer Science and
+              Engineering student হিসেবে web development, full-stack
+              development, AI, আর software engineering শিখছি। এই space-এ আমি যা
+              শিখছি, যা বানাচ্ছি, আর developer হিসেবে কীভাবে grow করছি, তা লিখে
+              রাখি।
+            </p>
+          </div>
 
-export default function AboutPage() {
-  return (
-    <div className="w-full">
-      <section className="bg-linear-to-b from-slate-50 to-white px-6 py-20 sm:py-28">
-        <div className="mx-auto max-w-4xl">
-          <p className="mb-4 text-sm font-medium uppercase tracking-widest text-blue-600">
           <div className="rounded-4xl border border-border bg-surface-soft p-6 shadow-sm sm:p-8 lg:p-10">
-          </p>
+            <SectionTitle
               title="আমি কী শিখছি"
               description="Developer হিসেবে grow করার জন্য যেগুলোতে focus করছি।"
-          </h1>
+            />
             <div className="grid gap-3 sm:grid-cols-2">
               {learningAreas.map((area) => (
                 <div
@@ -64,76 +92,74 @@ export default function AboutPage() {
                   <p className="text-sm font-semibold text-primary">{area}</p>
                 </div>
               ))}
-              শিখছি, যা বানাচ্ছি, আর developer হিসেবে কীভাবে grow করছি, তা লিখে
-              রাখি।
-            </p>
+            </div>
           </div>
+        </div>
+      </section>
 
       <section className="bg-surface px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-6xl">
-              title="আমার লক্ষ্য"
+          <SectionTitle
             title="আমি কী লিখি"
             description="যে বিষয়গুলোকে note, tutorial, আর learning log-এ বদলে দিই।"
-            <p className="text-base leading-7 text-slate-300">
+          />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {writingTopics.map((topic) => (
-              progress-এর একটা record রাখা।
+              <div
                 key={topic}
                 className="rounded-2xl border border-border bg-background p-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40"
-              <Link
+              >
                 <p className="text-sm font-semibold text-primary sm:text-base">
                   {topic}
                 </p>
-                className="inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700"
-              >
-                Dev Log পড়ুন
-              </Link>
-              <Link
-                href="/videos"
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-6xl">
-                ভিডিও দেখুন
+          <SectionTitle
             title="আমার tech stack"
             description="শেখা আর বানানোর সময় আমি যে tools আর technologies ব্যবহার করি।"
-          </div>
+          />
           <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {techStack.map((tech) => (
-
+              <div
                 key={tech}
                 className="rounded-full border border-border bg-surface px-4 py-3 text-center text-sm font-medium text-primary shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-surface-soft"
-          <SectionTitle
-                {tech}
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {learningAreas.map((area) => (
-              <div
-                key={area}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
               >
+                {tech}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-surface-soft px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-6xl">
-            ))}
-            title="আমার লক্ষ্য"
-            description="এই blog-টাকে আমি কী বানাতে চাই।"
-      </section>
           <div className="rounded-4xl border border-border bg-surface p-6 shadow-sm sm:p-8 lg:p-10">
+            <SectionTitle
+              title="আমার লক্ষ্য"
+              description="এই blog-টাকে আমি কী বানাতে চাই।"
+            />
             <p className="max-w-3xl text-sm leading-7 text-muted sm:text-base">
               আমার লক্ষ্য হলো নিয়মিত practice করে আরও ভালো হওয়া, useful note
               শেয়ার করা, আর web development, AI, software engineering-এ আমার
               progress-এর একটা record রাখা।
             </p>
             <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {[
-                "নিয়মিত practice",
-                "Useful note",
-                "Project progress",
-              ].map((goal) => (
-                <div
-                  key={goal}
-                  className="rounded-2xl border border-border bg-background px-4 py-3 text-sm font-medium text-primary"
-                >
-                  {goal}
-                </div>
-              ))}
+              {["নিয়মিত practice", "Useful note", "Project progress"].map(
+                (goal) => (
+                  <div
+                    key={goal}
+                    className="rounded-2xl border border-border bg-background px-4 py-3 text-sm font-medium text-primary"
+                  >
+                    {goal}
+                  </div>
+                ),
+              )}
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -149,61 +175,6 @@ export default function AboutPage() {
                 ভিডিও দেখুন
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-6xl">
-          <div className="rounded-4xl border border-border bg-surface-soft p-6 shadow-sm sm:p-8 lg:p-10">
-            <SectionTitle
-              title="আমার লক্ষ্য"
-              description="আমি public-এ শেখা চালিয়ে যেতে চাই, useful project বানাতে চাই।"
-            />
-            <p className="max-w-3xl text-sm leading-7 text-muted sm:text-base">
-              আমি public-এ শেখা চালিয়ে যেতে চাই, useful project বানাতে চাই, আর
-              পথে পাওয়া lesson গুলো শেয়ার করতে চাই। এই blog-এ আমি সেই note গুলো
-              গুছিয়ে রাখি, যাতে সেগুলো আমার জন্য আর একই পথে হাঁটা অন্যদের জন্যও
-              কাজে লাগে।
-            </p>
-          </div>
-        </div>
-      </section>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 py-16">
-        <div className="mx-auto max-w-5xl">
-          <SectionTitle
-            title="বর্তমান tech stack"
-            description="শেখা আর বানানোর সময় আমি যে tools আর technologies ব্যবহার করি।"
-          />
-          <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {techStack.map((tech) => (
-              <div
-                key={tech}
-                className="rounded-full border border-slate-200 bg-white px-4 py-3 text-center text-sm font-medium text-slate-700 shadow-sm"
-              >
-                {tech}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl">
-          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-8 sm:p-10">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900">
-              আমার লক্ষ্য
-            </h2>
-            <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600">
-              আমি public-এ শেখা চালিয়ে যেতে চাই, useful project বানাতে চাই, আর
-              পথে পাওয়া lesson গুলো শেয়ার করতে চাই। এই blog-এ আমি সেই note গুলো
-              গুছিয়ে রাখি, যাতে সেগুলো আমার জন্য আর একই পথে হাঁটা অন্যদের জন্যও
-              কাজে লাগে।
-            </p>
           </div>
         </div>
       </section>
