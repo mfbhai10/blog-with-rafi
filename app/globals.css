@@ -69,15 +69,57 @@
   outline-offset: 3px;
 }
 
+.animate-float-slow {
+  animation: float-slow 18s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 12s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(16px, -18px, 0) scale(1.03);
+  }
+  66% {
+    transform: translate3d(-12px, 14px, 0) scale(0.98);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.03);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-pulse-soft {
+    animation: none !important;
+  }
+}
+
 html {
   background-color: var(--background);
   color: var(--text-primary);
+  overflow-x: clip;
 }
 
 body {
   background-color: var(--background);
   color: var(--text-primary);
   font-family: var(--font-body), Inter, Arial, Helvetica, sans-serif;
+  overflow-x: clip;
 }
 
 /* Code blocks use code font variable */

@@ -93,7 +93,7 @@ export default function HomePage() {
             <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4">
               <Link
                 href="/blog"
-                className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-white shadow-md shadow-primary/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-hover sm:px-7 sm:text-base"
+                className="inline-flex items-center justify-center rounded-full border border-primary/30 bg-linear-to-r from-primary to-accent px-6 py-3.5 text-sm font-semibold text-surface shadow-lg shadow-primary/20 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:px-7 sm:text-base"
               >
                 ব্লগ পড়ুন
               </Link>
@@ -267,7 +267,7 @@ export default function HomePage() {
                   href="https://mfr-portfolio.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-md shadow-primary/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-hover"
+                  className="mt-6 inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-surface shadow-md shadow-primary/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
                   পোর্টফোলিও দেখুন
                 </a>
