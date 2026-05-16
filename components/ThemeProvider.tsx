@@ -14,6 +14,7 @@ export default function ThemeProvider({ children }: Props) {
       defaultTheme="system"
       enableSystem={true}
       disableTransitionOnChange={false}
+      enableColorScheme={false}
     >
       {children}
     </NextThemeProvider>
