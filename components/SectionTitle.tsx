@@ -9,8 +9,12 @@ export default function SectionTitle({
 }: SectionTitleProps) {
   return (
     <div className="mb-12">
-      <h2 className="text-3xl font-bold text-slate-900">{title}</h2>
-      {description && <p className="mt-2 text-slate-600">{description}</p>}
+      <h2 className="font-heading text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+        {title}
+      </h2>
+      {description && (
+        <p className="mt-2 max-w-2xl text-muted">{description}</p>
+      )}
     </div>
   );
 }

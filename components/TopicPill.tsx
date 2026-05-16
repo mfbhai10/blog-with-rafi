@@ -12,17 +12,18 @@ export default function TopicPill({
   href = "#",
 }: TopicPillProps) {
   return (
-    <Link href={href}>
-      <div className="flex items-center justify-between rounded-lg border border-slate-200 px-4 py-3 hover:border-blue-300 hover:bg-blue-50 transition-colors group cursor-pointer">
-        <span className="font-medium text-slate-900 group-hover:text-blue-600">
-          {label}
+    <Link
+      href={href}
+      className="group flex items-center justify-between rounded-full border border-border bg-surface px-4 py-3 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-surface-soft"
+    >
+      <span className="font-medium text-primary transition-colors duration-300 group-hover:text-accent">
+        {label}
+      </span>
+      {count !== undefined && (
+        <span className="rounded-full bg-accent-soft px-2.5 py-1 text-sm font-medium text-accent transition-colors duration-300 group-hover:bg-primary/10">
+          {count}
         </span>
-        {count !== undefined && (
-          <span className="text-sm text-slate-500 group-hover:text-blue-600">
-            {count}
-          </span>
-        )}
-      </div>
+      )}
     </Link>
   );
 }
