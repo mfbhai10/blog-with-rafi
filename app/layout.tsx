@@ -41,14 +41,17 @@ export default function RootLayout({
   return (
     <html
       lang="bn"
+      suppressHydrationWarning
       className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrains.variable} h-full antialiased`}
     >
-      <body className="relative isolate flex min-h-screen flex-col overflow-x-clip bg-background font-body text-text-primary">
+      <body className="relative isolate overflow-x-clip bg-background font-body text-text-primary">
         <AnimatedBackground />
         <ThemeProvider>
-          <Navbar />
-          <main className="relative z-10 flex-1">{children}</main>
-          <Footer />
+          <div className="relative z-10 flex min-h-screen flex-col">
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

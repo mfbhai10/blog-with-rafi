@@ -40,6 +40,16 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--text-primary);
+  --color-surface: var(--surface);
+  --color-surface-soft: var(--surface-soft);
+  --color-text-primary: var(--text-primary);
+  --color-text-muted: var(--text-muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-code-bg: var(--code-bg);
   --font-sans: var(--font-body);
   --font-mono: var(--font-code);
 }
@@ -110,15 +120,18 @@
 }
 
 html {
+  min-height: 100%;
   background-color: var(--background);
   color: var(--text-primary);
   overflow-x: clip;
 }
 
 body {
+  min-height: 100vh;
   background-color: var(--background);
   color: var(--text-primary);
   font-family: var(--font-body), Inter, Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
   overflow-x: clip;
 }
 
