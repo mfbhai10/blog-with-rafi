@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SectionTitle from "@/components/SectionTitle";
 import BlogCard from "@/components/BlogCard";
-import { getAllPosts } from "@/lib/posts";
+import { getAllCategories, getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "ব্লগ | Blog with Rafi",
+  title: "Dev Logs | Blog with Rafi",
   description:
     "রাফির dev log, coding note, tutorial, আর শেখার journey-এর লেখা পড়ুন।",
 };
@@ -26,29 +26,87 @@ function formatDate(date: string) {
 
 export default function BlogPage() {
   const allPosts = getAllPosts();
+  const categories = getAllCategories();
 
   return (
     <div className="w-full">
-      <section className="relative overflow-hidden border-b border-slate-200 bg-linear-to-b from-slate-50 to-white px-6 py-20 sm:py-24">
-        <div className="mx-auto max-w-5xl">
-          <SectionTitle
-            title="Dev Logs"
-            description="coding শেখার পথে আমার notes, tutorials, আর ছোট ছোট lesson।"
-          />
-          <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-600">
-            এই পেজের সব লেখা content/blog থেকে সরাসরি আসে, তাই MDX file বদলালে
-            এখানেও আপডেট হয়ে যায়।
-          </p>
+      <section className="relative overflow-hidden px-4 py-16 sm:px-6 sm:py-20">
+        <div className="absolute inset-0 -z-10 bg-background" />
+        <div className="absolute left-1/2 top-0 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/12 blur-3xl sm:h-96 sm:w-96" />
+        <div className="absolute right-0 top-20 -z-10 h-64 w-64 rounded-full bg-accent/10 blur-3xl sm:h-80 sm:w-80" />
+
+        <div className="mx-auto max-w-6xl">
+          <div className="rounded-4xl border border-border bg-linear-to-br from-surface via-surface-soft/80 to-background p-6 shadow-sm sm:p-8 lg:p-10">
+            <div className="max-w-3xl">
+              <div className="mb-5 inline-flex items-center rounded-full border border-border bg-surface-soft px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-muted">
+                Blog archive
+              </div>
+
+              <h1 className="font-heading text-4xl font-bold tracking-tight text-primary sm:text-5xl lg:text-6xl">
+                Dev Logs
+              </h1>
+
+              <p className="mt-5 max-w-2xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
+                coding শেখার পথে আমার notes, tutorials, আর ছোট ছোট lesson।
+              </p>
+
+              <p className="mt-4 max-w-2xl text-sm leading-6 text-muted sm:text-base">
+                এই পেজের সব লেখা content/blog থেকে সরাসরি আসে, তাই MDX file
+                বদলালে এখানেও আপডেট হয়ে যায়।
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              <div className="rounded-2xl border border-border bg-background/80 p-4 backdrop-blur">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+                  মোট পোস্ট
+                </p>
+                <p className="mt-2 text-2xl font-bold text-primary">
+                  {allPosts.length}
+                </p>
+              </div>
+              <div className="rounded-2xl border border-border bg-background/80 p-4 backdrop-blur">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+                  ক্যাটাগরি
+                </p>
+                <p className="mt-2 text-2xl font-bold text-primary">
+                  {categories.length}
+                </p>
+              </div>
+              <div className="rounded-2xl border border-border bg-background/80 p-4 backdrop-blur">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+                  ফোকাস
+                </p>
+                <p className="mt-2 text-base font-semibold text-primary">
+                  সহজ, পরিষ্কার, practical লেখা
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="px-6 py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl">
+      <section className="px-4 py-16 sm:px-6 sm:py-20">
+        <div className="mx-auto max-w-6xl">
           {allPosts.length > 0 ? (
-            <>
-              <p className="mb-8 text-sm text-slate-600">
-                {allPosts.length}টি পোস্ট দেখানো হচ্ছে
-              </p>
+            <div className="space-y-8">
+              <div className="rounded-4xl border border-border bg-surface px-5 py-6 shadow-sm sm:px-6 sm:py-7">
+                <SectionTitle
+                  title="ক্যাটাগরি"
+                  description="এগুলো শুধু visual cue, এখনো কোনো filtering চালু করা হয়নি।"
+                />
+
+                <div className="flex flex-wrap gap-3">
+                  {categories.map((category) => (
+                    <span
+                      key={category}
+                      className="inline-flex items-center rounded-full border border-border bg-surface-soft px-4 py-2 text-sm font-medium text-primary transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-accent-soft hover:text-accent"
+                    >
+                      {category}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
               <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
                 {allPosts.map((post) => (
@@ -64,14 +122,14 @@ export default function BlogPage() {
                   />
                 ))}
               </div>
-            </>
+            </div>
           ) : (
-            <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 py-16 text-center">
-              <p className="text-slate-600">এখনও কোনো পোস্ট পাওয়া যায়নি।</p>
+            <div className="rounded-4xl border border-dashed border-border bg-surface-soft py-16 text-center shadow-sm">
+              <p className="text-muted">এখনও কোনো পোস্ট পাওয়া যায়নি।</p>
               <div className="mt-6">
                 <Link
                   href="/"
-                  className="inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700"
+                  className="inline-flex items-center rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-hover"
                 >
                   হোমে ফিরে যান
                 </Link>
@@ -81,9 +139,9 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="border-t border-slate-200 bg-white px-6 py-16">
-        <div className="mx-auto max-w-5xl text-center">
-          <p className="text-slate-600">
+      <section className="border-t border-border bg-surface px-4 py-16 sm:px-6 sm:py-20">
+        <div className="mx-auto max-w-6xl text-center">
+          <p className="text-sm leading-7 text-muted sm:text-base">
             content/blog-এ MDX file যোগ করলেই নতুন পোস্ট এখানে automatically
             দেখাবে।
           </p>
