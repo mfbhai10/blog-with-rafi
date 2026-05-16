@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SectionTitle from "@/components/SectionTitle";
 import BlogCard from "@/components/BlogCard";
+import BlogFilter from "@/components/BlogFilter";
 import { getAllCategories, getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
@@ -90,38 +91,7 @@ export default function BlogPage() {
         <div className="mx-auto max-w-6xl">
           {allPosts.length > 0 ? (
             <div className="space-y-8">
-              <div className="rounded-4xl border border-border bg-surface px-5 py-6 shadow-sm sm:px-6 sm:py-7">
-                <SectionTitle
-                  title="ক্যাটাগরি"
-                  description="এগুলো শুধু visual cue, এখনো কোনো filtering চালু করা হয়নি।"
-                />
-
-                <div className="flex flex-wrap gap-3">
-                  {categories.map((category) => (
-                    <span
-                      key={category}
-                      className="inline-flex items-center rounded-full border border-border bg-surface-soft px-4 py-2 text-sm font-medium text-primary transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-accent-soft hover:text-accent"
-                    >
-                      {category}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-                {allPosts.map((post) => (
-                  <BlogCard
-                    key={post.slug}
-                    title={post.title}
-                    description={post.description}
-                    category={post.category}
-                    date={formatDate(post.date)}
-                    readingTime={post.readingTime}
-                    href={`/blog/${post.slug}`}
-                    tags={post.tags}
-                  />
-                ))}
-              </div>
+              <BlogFilter posts={allPosts} categories={categories} />
             </div>
           ) : (
             <div className="rounded-4xl border border-dashed border-border bg-surface-soft py-16 text-center shadow-sm">
@@ -136,15 +106,6 @@ export default function BlogPage() {
               </div>
             </div>
           )}
-        </div>
-      </section>
-
-      <section className="border-t border-border bg-surface px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-6xl text-center">
-          <p className="text-sm leading-7 text-muted sm:text-base">
-            content/blog-এ MDX file যোগ করলেই নতুন পোস্ট এখানে automatically
-            দেখাবে।
-          </p>
         </div>
       </section>
     </div>

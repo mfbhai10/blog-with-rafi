@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const navLinks = [
     { label: "হোম", href: "/" },
@@ -26,15 +28,22 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden flex-1 items-center justify-center gap-6 md:flex">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-muted transition-colors duration-200 hover:text-primary"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors duration-200 ${
+                    isActive
+                      ? "text-primary border-b-2 border-primary pb-0.5"
+                      : "text-muted hover:text-primary"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             <a
               href="https://mfr-portfolio.vercel.app/"
               target="_blank"
@@ -79,16 +88,23 @@ export default function Navbar() {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="mt-3 flex flex-col gap-3 border-t border-border pt-4 md:hidden">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="rounded-lg px-2 py-1 text-sm font-medium text-muted transition-colors duration-150 hover:bg-surface hover:text-primary"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`rounded-lg px-2 py-1 text-sm font-medium transition-colors duration-150 ${
+                    isActive
+                      ? "bg-accent-soft text-accent"
+                      : "text-muted hover:bg-surface hover:text-primary"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             <a
               href="https://mfr-portfolio.vercel.app/"
               target="_blank"
