@@ -64,6 +64,11 @@
     opacity 240ms ease;
 }
 
+:where(a, button, [role="button"], input, select, textarea):focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
 html {
   background-color: var(--background);
   color: var(--text-primary);
